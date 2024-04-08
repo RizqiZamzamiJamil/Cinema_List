@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cinema List</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="./img/logo.png" alt="logo.png">
+        <a href="#" class="navbar-logo">MyCinemaList</a>
+
+        <div class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+            <a href="#" class="active">Home</a>
+            <a href="#">Film</a>
+            <a href="#">Serial TV</a>
+        </div>
+
+        <div class="navbar-hamburger" onclick="openSidebar()">&#9776;</div>
+
+        <div class="navbar-nav">
+            <a href="#" class="active">Home</a>
+            <a href="#">Film</a>
+            <a href="#">Serial TV</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang</h1>
+            <p>Cari berbagai informasi tentang film dan serial TV favorit anda hanya di</p>
+            <h2>MyCinemaList</h2>
+
+            <div style="margin-top: 20px;">
+                <input type="text" placeholder="Cari film berdasarkan judul disini ...">
+                <button type="button">Cari</button>
+                <!-- Pencarian dengan API search -->
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="topp">
+            <div class="top-content">
+                <h1>Top Rating</h1>
+                <div id="daftar-top">
+                    <!-- Terisi dengan API top-rated -->
+                </div>
+            </div>
+
+            <div class="upcoming-content">
+                <h1>UpComing</h1>
+                <div id="daftar-upcoming">
+                    <!-- Terisi dengan API upcoming -->
+                </div>
+
+                <div class="baris"></div>
+            </div>
+        </section>
+
+        <div class="film-content">
+            <h1>Film</h1>
+            <div id="daftar-film">
+                <!-- Terisi dengan API popular -->
+            </div>
+            <button id="load">Muat Lagi</button>
+            
+            <div class="baris"></div>
+        </div>
+
+        <div class="tv-content">
+            <h1>Serial TV</h1>
+            <div id="daftar-tv">
+                <!-- Terisi dengan API discover/TV -->
+            </div>
+            <button id="load-tv">Muat Lagi</button>
+
+            <div class="baris"></div>
+        </div>
+
+    </main>
+    
+    <section class="tanya">
+        <h1>Ajukan Pertanyaan</h1>
+
+        <div class="tanya-container">
+            <div class="kiri">
+                <img src="./img/logo.png" alt="">
+                <h2>MyCinemaList</h2>
+            </div>
+
+            <div class="kanan">
+                <form>
+                    <label for="nama">Nama :</label>
+                    <input type="text" id="nama" name="nama" required placeholder="Masukkan Nama Lengkap">
+
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required placeholder="Masukkan Email">
+
+                    <label for="tanya">Pertanyaan :</label>
+                    <textarea id="tanya" name="tanya" rows="4" required placeholder="Masukkan Pertanyaan"></textarea>
+
+                    <button type="submit">Kirim Pertanyaan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="credit">
+            <p>Created by <a href="">Rizqi Zamzami Jamil</a>. | &copy; 2024.</p>
+            <p>API from <a href="https://developer.themoviedb.org/docs/getting-started" target="_blank">The Movie DB</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>

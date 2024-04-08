@@ -1,0 +1,520 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+:root {
+    --secondary: rgb(149, 226, 243);
+    --primary: rgb(4, 52, 60);
+    --another: rgb(82, 149, 164);
+    --third:#35374B;
+    --bg: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: black;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    max-height: 4.5rem;
+}
+
+.navbar .navbar-logo {
+    font-family: "Rubik Gemstones", system-ui;
+    color: var(--secondary);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.navbar .navbar-nav {
+    margin-left: 2rem;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--secondary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid var(--secondary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-nav a.active {
+    color: var(--secondary);
+    border-bottom: 0.2rem solid var(--secondary);
+}
+
+.navbar-hamburger {
+    color: var(--secondary);
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--primary);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 72px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: var(--another);
+    color: black;
+}
+
+.sidebar a.active {
+    background-color: var(--secondary);
+    color: black;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 2rem;
+    margin-left: 50px;
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/hero.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    font-family: 'Yellowtail', cursive;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero-content h2{
+    font-family: "Rubik Gemstones";
+    font-size: 4rem;
+    color: var(--secondary);
+    font-weight: 200;
+}
+
+.hero-content input[type="text"] {
+    padding: 8px;
+    margin-right: 8px;
+    width: 250px;
+    border-radius: 0.5rem;
+}
+
+.hero-content button {
+    padding: 8px 16px;
+    background-color: var(--secondary);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.hero-content button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* Main */
+/* Topp */
+.top-content,
+.upcoming-content {
+    padding: 1rem 7%;
+}
+
+.upcoming-content {
+    background-color: var(--third);
+}
+
+.upcoming-content h1 {
+    color: white;
+}
+
+.fa-star {
+    color: yellow;
+    margin-right: 5px;
+}
+
+/* Film dan TV */
+.film-content, .tv-content {
+    padding: 1rem 7%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--third);
+    min-height: 200px;
+}
+
+.film-content h1,
+.tv-content h1 {
+    color: white;
+}
+
+.film-content button,
+.tv-content button {
+    background-color: var(--third);
+    color: white;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid white;
+    width: 6rem;
+    cursor: pointer;
+}
+
+.film-content button:hover,
+.tv-content button:hover {
+    color: black;
+    background-color: white;
+}
+
+#daftar-top,
+#daftar-upcoming,
+#daftar-film,
+#daftar-tv {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* Card Setiap Item Film dan TV */
+.movie-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 160px;
+    cursor: pointer;
+}
+
+.movie-info {
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding: 10px;
+}
+
+.poster {
+    width: 100%;
+    height: 230px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.judul {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tahun {
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.genre {
+    font-size: 0.7rem;
+    height: 3rem;
+}
+
+/* Pop-up Detail Film*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.movie-popup {
+    position: fixed;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    min-width: 40rem;
+}
+
+.popup-poster {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.popup-detail {
+    margin-left: 20px;
+}
+
+.popup-judul {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.popup-genre,
+.popup-tahun,
+.popup-sinopsis {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Pertanyaan */
+.tanya {
+    padding: 1rem 7%;
+    background-color: var(--third);
+    color: white;
+}
+
+.tanya-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.kiri {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.kiri img {
+    width: 15rem;
+}
+
+.kiri h2 {
+    font-family: "Rubik Gemstones";
+    font-size: 4rem;
+    color: var(--secondary);
+}
+
+.kanan {
+    width: 48%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.kanan form {
+    display: grid;
+    gap: 15px;
+}
+
+.kanan label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.kanan input,
+.kanan textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.kanan button {
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.kanan button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.baris {
+    margin-top: 20px;
+    height: 1px;
+    background-color: rgb(224, 224, 224);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 1rem 3rem;
+    color: white;
+}
+
+footer .credit a {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+/* Responsif */
+@media screen and (max-width: 1080px) {
+    .tanya-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kiri {
+        order: 1;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .kanan {
+        order: 2;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 880px) {
+    .navbar .navbar-logo {
+        font-size: 1.8rem;
+    }
+
+    .navbar .navbar-nav a {
+        font-size: 1.2rem;
+        margin: 0 0.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+        justify-content: space-between;
+    }
+
+    .navbar .navbar-logo {
+        font-size: 1.8rem;
+    }
+
+    .navbar .navbar-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg);
+        z-index: 999;
+    }
+
+    .navbar.active .navbar-nav {
+        display: flex;
+    }
+
+    .navbar .navbar-nav a {
+        display: block;
+        padding: 0.5rem 0;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .navbar .navbar-hamburger {
+        display: flex;
+    }
+
+    .hero-content input[type="text"] {
+        width: 85%;
+    }
+}
