@@ -10,6 +10,7 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  background: #090a0d;
 }
 
 @layer components {
@@ -25,8 +26,8 @@ body {
     @apply mt-2 text-3xl font-extrabold tracking-normal text-cinema-ink sm:text-4xl;
   }
 
-  .section-link {
-    @apply inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200;
+  .section-link-dark {
+    @apply inline-flex items-center gap-2 rounded-lg border border-white/15 px-4 py-2.5 text-sm font-semibold text-cinema-mist hover:bg-white/10 hover:text-white focus:outline-none focus:ring-4 focus:ring-cinema-teal/20;
   }
 
   .media-grid {
@@ -34,10 +35,32 @@ body {
   }
 
   .media-card {
-    @apply overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-poster;
+    @apply relative isolate overflow-hidden rounded-2xl border border-white/10 bg-cinema-panel shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-2 hover:border-cinema-teal/60 hover:shadow-[0_28px_70px_rgba(0,0,0,0.48)];
+  }
+
+  .media-card::after {
+    content: '';
+    pointer-events: none;
+    @apply absolute inset-0 z-10 bg-gradient-to-t from-black via-black/20 to-transparent opacity-95 transition duration-300;
+  }
+
+  .media-card:hover::after {
+    @apply via-black/10;
+  }
+
+  .media-card-button {
+    @apply relative block h-full w-full text-left;
   }
 
   .poster-image {
-    @apply aspect-[2/3] w-full bg-gray-200 object-cover;
+    @apply aspect-[2/3] w-full bg-cinema-ink object-cover transition duration-500;
+  }
+
+  .media-card:hover .poster-image {
+    @apply scale-105;
+  }
+
+  .media-card-info {
+    @apply absolute inset-x-0 bottom-0 z-20 space-y-3 p-4;
   }
 }

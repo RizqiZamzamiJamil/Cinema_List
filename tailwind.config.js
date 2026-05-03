@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        brand: ['Rubik Gemstones', 'Poppins', 'sans-serif'],
+        brand: ['Space Grotesk', 'Poppins', 'sans-serif'],
       },
       colors: {
         cinema: {
