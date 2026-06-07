@@ -1,7 +1,23 @@
 import vue from "@vitejs/plugin-vue";
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 
-export default defineConfig({
-    plugins: [vue()],
-    base: "/Cinema_List/",
+function normalizeBasePath(basePath) {
+    if (!basePath || basePath === ".") {
+        return "/";
+    }
+
+    const withLeadingSlash = basePath.startsWith("/") ? basePath : `/${basePath}`;
+
+    return withLeadingSlash.endsWith("/")
+        ? withLeadingSlash
+        : `${withLeadingSlash}/`;
+}
+
+export default defineConfig(({ mode }) => {
+    const env = loadEnv(mode, process.cwd(), "");
+
+    return {
+        plugins: [vue()],
+        base: normalizeBasePath(env.VITE_BASE_PATH || "/"),
+    };
 });

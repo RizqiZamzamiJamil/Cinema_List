@@ -1,5 +1,5 @@
 <script setup>
-import { Clapperboard } from 'lucide-vue-next';
+import { Menu } from 'lucide-vue-next';
 
 defineProps({
   activeSection: {
@@ -13,29 +13,30 @@ defineProps({
 });
 
 const emit = defineEmits(['set-active']);
+const logoUrl = new URL('../../../img/logo.png', import.meta.url).href;
 </script>
 
 <template>
   <nav class="fixed left-0 right-0 top-0 z-40 border-b border-white/10 bg-cinema-ink shadow-2xl">
     <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between px-4 py-3 lg:px-8">
       <a href="#home" class="flex min-w-0 items-center gap-3" @click="emit('set-active', 'home')">
-        <span class="grid h-11 w-11 place-items-center rounded-xl bg-cinema-teal text-cinema-ink shadow-[0_0_30px_rgba(48,213,200,0.35)]">
-          <Clapperboard class="h-6 w-6" />
+        <span class="grid h-12 w-12 place-items-center rounded-lg border border-cinema-teal/30 bg-white/5 p-1.5 shadow-[0_0_32px_rgba(11,143,255,0.32)]">
+          <img :src="logoUrl" alt="" class="h-full w-full object-contain" />
         </span>
         <span class="font-brand text-2xl font-extrabold text-white sm:text-3xl">
-          Cinema<span class="text-cinema-teal">List</span>
+          <span class="brand-word-cinema">Cinema</span><span class="brand-word-list">List</span>
         </span>
       </a>
 
       <button
         data-collapse-toggle="navbar-menu"
         type="button"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-cinema-mist hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cinema-teal lg:hidden"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-cinema-mist hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cinema-blue lg:hidden"
         aria-controls="navbar-menu"
         aria-expanded="false"
       >
         <span class="sr-only">Buka menu</span>
-        <Clapperboard class="h-5 w-5" />
+        <Menu class="h-5 w-5" />
       </button>
 
       <div id="navbar-menu" class="hidden w-full lg:block lg:w-auto">
@@ -45,7 +46,7 @@ const emit = defineEmits(['set-active']);
               :href="`#${section.id}`"
               class="block rounded-lg px-3 py-2 text-sm transition duration-200 lg:px-4"
               :class="activeSection === section.id
-                ? 'bg-cinema-teal text-cinema-ink shadow-[0_0_20px_rgba(48,213,200,0.22)]'
+                ? 'bg-cinema-blue text-white shadow-[0_0_20px_rgba(11,143,255,0.32)]'
                 : 'text-cinema-mist hover:bg-white/10 hover:text-white'"
               @click="emit('set-active', section.id)"
             >

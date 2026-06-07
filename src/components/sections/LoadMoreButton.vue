@@ -23,7 +23,7 @@ const emit = defineEmits(['click']);
   <div class="mt-8 flex justify-center">
     <button
       type="button"
-      class="inline-flex items-center justify-center gap-2 rounded-lg bg-cinema-teal px-5 py-3 text-sm font-bold text-cinema-ink hover:bg-cinema-gold focus:outline-none focus:ring-4 focus:ring-cinema-teal/30 disabled:cursor-not-allowed disabled:opacity-70"
+      class="inline-flex items-center justify-center gap-2 rounded-lg bg-cinema-blue px-5 py-3 text-sm font-bold text-white hover:bg-cinema-teal hover:text-cinema-ink focus:outline-none focus:ring-4 focus:ring-cinema-blue/30 disabled:cursor-not-allowed disabled:opacity-70"
       :disabled="loading"
       @click="emit('click')"
     >

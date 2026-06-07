@@ -40,7 +40,7 @@ defineExpose({ scrollIntoView });
   <section
     id="hasil-pencarian"
     ref="root"
-    class="bg-[#0d0f14] px-4 py-12 lg:px-8"
+    class="bg-[#0b1018] px-4 py-12 lg:px-8"
   >
     <div class="mx-auto max-w-7xl">
       <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">

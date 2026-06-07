@@ -5,7 +5,7 @@ import FlowbiteAccordion from '../ui/FlowbiteAccordion.vue';
 </script>
 
 <template>
-  <section id="data-source" class="scroll-mt-24 bg-[#090a0d] px-4 py-14 lg:px-8">
+  <section id="data-source" class="scroll-mt-24 bg-cinema-ink px-4 py-14 lg:px-8">
     <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
       <div>
         <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cinema-teal text-cinema-ink">

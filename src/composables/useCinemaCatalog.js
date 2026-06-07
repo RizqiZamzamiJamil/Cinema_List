@@ -1,5 +1,5 @@
 import { computed, onBeforeUnmount, reactive, ref, watch } from 'vue';
-import { apiKey, apiUrl, backdropUrl, heroUrl, movieAppend, tvAppend } from '../constants/tmdb';
+import { backdropUrl, buildTmdbUrl, heroUrl, movieAppend, tmdbSearchPath, tvAppend } from '../constants/tmdb';
 import { castFor, resolveType } from '../utils/media';
 
 export function useCinemaCatalog() {
@@ -69,13 +69,7 @@ export function useCinemaCatalog() {
   });
 
   async function tmdb(path, params = {}) {
-    const url = new URL(`${apiUrl}${path}`);
-    url.search = new URLSearchParams({
-      api_key: apiKey,
-      language: 'id-ID',
-      ...params,
-    }).toString();
-
+    const url = buildTmdbUrl(path, params);
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`TMDB gagal merespon ${response.status}`);
@@ -142,7 +136,7 @@ export function useCinemaCatalog() {
     activeQuery.value = query;
 
     try {
-      const response = await tmdb('/search/multi', {
+      const response = await tmdb(tmdbSearchPath, {
         query,
         include_adult: 'false',
       });

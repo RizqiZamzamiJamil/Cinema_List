@@ -10,16 +10,32 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
-  background: #090a0d;
+  background: #070a10;
 }
 
 @layer components {
+  .brand-word-cinema {
+    background: linear-gradient(180deg, #ffffff 0%, #eef3f8 44%, #9ba9bb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 10px 34px rgba(244, 247, 251, 0.12);
+  }
+
+  .brand-word-list {
+    background: linear-gradient(180deg, #24ecff 0%, #12b9ff 46%, #087dff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 10px 32px rgba(11, 143, 255, 0.28);
+  }
+
   .section-heading {
     @apply mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between;
   }
 
   .section-kicker {
-    @apply text-sm font-bold uppercase text-cinema-coral;
+    @apply text-sm font-bold uppercase text-cinema-teal;
   }
 
   .section-title {
@@ -35,7 +51,7 @@ body {
   }
 
   .media-card {
-    @apply relative isolate overflow-hidden rounded-2xl border border-white/10 bg-cinema-panel shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-2 hover:border-cinema-teal/60 hover:shadow-[0_28px_70px_rgba(0,0,0,0.48)];
+    @apply relative isolate overflow-hidden rounded-2xl border border-white/10 bg-cinema-panel shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-2 hover:border-cinema-blue/70 hover:shadow-[0_28px_70px_rgba(2,84,160,0.28)];
   }
 
   .media-card::after {

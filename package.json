@@ -6,8 +6,13 @@
     "scripts": {
         "dev": "vite --host 127.0.0.1",
         "build": "vite build",
+        "build:cloudflare": "vite build --base=/",
+        "build:gh-pages": "vite build --base=/Cinema_List/",
         "preview": "vite preview --host 127.0.0.1",
-        "deploy": "npm run build && gh-pages -d dist"
+        "pages:dev": "npm run build:cloudflare && npx wrangler pages dev dist",
+        "deploy": "npm run deploy:gh-pages",
+        "deploy:cloudflare": "npm run build:cloudflare && npx wrangler pages deploy dist --project-name cinemalist",
+        "deploy:gh-pages": "npm run build:gh-pages && gh-pages -d dist"
     },
     "dependencies": {
         "flowbite": "^2.5.2",

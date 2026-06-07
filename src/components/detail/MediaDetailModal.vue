@@ -92,7 +92,7 @@ const relatedItems = computed(() => recommendationItems(props.modalItem));
     class="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden bg-black/80 p-4"
     @click.self="emit('close')"
   >
-    <div class="relative max-h-[92vh] w-full max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-[#0d0f14] text-white shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
+    <div class="relative max-h-[92vh] w-full max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-[#0b1018] text-white shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
       <button
         type="button"
         class="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-black/60 text-cinema-mist hover:bg-white hover:text-cinema-ink"
@@ -108,7 +108,7 @@ const relatedItems = computed(() => recommendationItems(props.modalItem));
           alt=""
           class="absolute inset-0 h-full w-full object-cover"
         />
-        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,10,13,0.98),rgba(9,10,13,0.76),rgba(9,10,13,0.36))]"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,10,16,0.98),rgba(7,10,16,0.76),rgba(7,10,16,0.36))]"></div>
 
         <div class="relative grid gap-7 p-5 sm:p-7 lg:grid-cols-[260px_1fr]">
           <img
@@ -265,7 +265,7 @@ const relatedItems = computed(() => recommendationItems(props.modalItem));
                     :href="`https://www.youtube.com/watch?v=${trailer.key}`"
                     target="_blank"
                     rel="noreferrer"
-                    class="inline-flex items-center gap-2 rounded-lg bg-cinema-teal px-4 py-2 text-sm font-bold text-cinema-ink hover:bg-cinema-gold"
+                    class="inline-flex items-center gap-2 rounded-lg bg-cinema-blue px-4 py-2 text-sm font-bold text-white hover:bg-cinema-teal hover:text-cinema-ink"
                   >
                     Tonton {{ trailer.name }}
                     <ExternalLink class="h-4 w-4" />
@@ -356,7 +356,7 @@ const relatedItems = computed(() => recommendationItems(props.modalItem));
 
         <button
           type="button"
-          class="inline-flex items-center gap-2 rounded-lg bg-cinema-teal px-5 py-3 text-sm font-bold text-cinema-ink hover:bg-cinema-gold focus:outline-none focus:ring-4 focus:ring-cinema-teal/30"
+          class="inline-flex items-center gap-2 rounded-lg bg-cinema-blue px-5 py-3 text-sm font-bold text-white hover:bg-cinema-teal hover:text-cinema-ink focus:outline-none focus:ring-4 focus:ring-cinema-blue/30"
           @click="emit('close')"
         >
           <X class="h-5 w-5" />

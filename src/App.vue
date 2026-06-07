@@ -75,7 +75,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#090a0d] text-cinema-mist">
+  <div class="min-h-screen bg-cinema-ink text-cinema-mist">
     <AppNavbar
       :active-section="activeSection"
       :sections="sections"

@@ -4,7 +4,7 @@ import MediaGrid from '../media/MediaGrid.vue';
 defineProps({
   backgroundClass: {
     type: String,
-    default: 'bg-[#090a0d]',
+    default: 'bg-cinema-ink',
   },
   genres: {
     type: Object,

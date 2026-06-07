@@ -34,8 +34,8 @@ const emit = defineEmits(['open-detail', 'search']);
       alt=""
       class="absolute inset-0 -z-20 h-full w-full object-cover"
     />
-    <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(9,10,13,0.96),rgba(9,10,13,0.72),rgba(9,10,13,0.34))]"></div>
-    <div class="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#090a0d] to-transparent"></div>
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,10,16,0.97),rgba(7,10,16,0.76),rgba(7,10,16,0.34))]"></div>
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-cinema-ink to-transparent"></div>
 
     <div class="mx-auto grid w-full max-w-7xl items-center gap-10 px-4 pb-20 pt-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8">
       <div class="max-w-3xl">
@@ -44,7 +44,7 @@ const emit = defineEmits(['open-detail', 'search']);
           Katalog film dan serial TV favorit
         </div>
         <h1 class="font-brand text-4xl font-extrabold leading-tight sm:text-5xl lg:text-7xl">
-          CinemaList
+          <span class="brand-word-cinema">Cinema</span><span class="brand-word-list">List</span>
         </h1>
         <p class="mt-5 max-w-2xl text-base leading-8 text-cinema-mist sm:text-lg">
           Temukan film populer, serial TV, jadwal tayang, rating, genre, aktor utama,
@@ -68,7 +68,7 @@ const emit = defineEmits(['open-detail', 'search']);
             </div>
             <button
               type="submit"
-              class="inline-flex items-center justify-center gap-2 rounded-lg bg-cinema-teal px-6 py-3 text-sm font-bold text-cinema-ink hover:bg-cinema-gold focus:outline-none focus:ring-4 focus:ring-cinema-teal/40 disabled:cursor-not-allowed disabled:opacity-70"
+              class="inline-flex items-center justify-center gap-2 rounded-lg bg-cinema-blue px-6 py-3 text-sm font-bold text-white hover:bg-cinema-teal hover:text-cinema-ink focus:outline-none focus:ring-4 focus:ring-cinema-blue/40 disabled:cursor-not-allowed disabled:opacity-70"
               :disabled="isSearching"
             >
               <Loader2 v-if="isSearching" class="h-5 w-5 animate-spin" />
