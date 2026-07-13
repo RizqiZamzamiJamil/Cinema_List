@@ -1,6 +1,11 @@
 const directTmdbApiUrl = 'https://api.themoviedb.org/3';
-const defaultGatewayApiUrl = 'https://api.rizam.fun/tmdb';
-const developmentTmdbApiKey = '12e2810e5d9b614ae49a5485cd26921c';
+const centralizedTmdbApiUrl = 'https://api.rizam.fun/tmdb';
+
+// API
+const defaultTmdbApiUrl = centralizedTmdbApiUrl;
+
+// FALLBACK API ASLI TMDB:
+// const defaultTmdbApiUrl = directTmdbApiUrl;
 
 function trimTrailingSlash(value) {
   return value.replace(/\/+$/, '');
@@ -14,14 +19,11 @@ function browserOrigin() {
   return typeof window === 'undefined' ? 'http://localhost' : window.location.origin;
 }
 
-const usesDirectTmdbByDefault = import.meta.env.DEV || import.meta.env.BASE_URL === '/Cinema_List/';
-
 export const apiUrl = trimTrailingSlash(
-  import.meta.env.VITE_TMDB_API_BASE_URL || (usesDirectTmdbByDefault ? directTmdbApiUrl : defaultGatewayApiUrl),
+  import.meta.env.VITE_TMDB_API_BASE_URL || defaultTmdbApiUrl,
 );
 export const isDirectTmdbApi = apiUrl.includes('api.themoviedb.org');
-export const apiKey = import.meta.env.VITE_TMDB_API_KEY
-  || (usesDirectTmdbByDefault && isDirectTmdbApi ? developmentTmdbApiKey : '');
+export const apiKey = import.meta.env.VITE_TMDB_API_KEY || '';
 export const tmdbSearchPath = import.meta.env.VITE_TMDB_SEARCH_PATH
   || (isDirectTmdbApi ? '/search/multi' : '/search');
 
