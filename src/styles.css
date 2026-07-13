@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --site-desktop-gutter: clamp(5.5rem, 7.3vw, 8.75rem);
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -41,13 +45,9 @@ body {
 
 @media (min-width: 1200px) {
   .site-container {
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .site-container {
-    max-width: 1640px;
+    max-width: none;
+    padding-right: var(--site-desktop-gutter);
+    padding-left: var(--site-desktop-gutter);
   }
 }
 
