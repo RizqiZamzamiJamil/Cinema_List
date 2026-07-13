@@ -44,8 +44,8 @@ const emit = defineEmits(['open-detail']);
 </script>
 
 <template>
-  <section :id="id" class="scroll-mt-24 px-4 py-14 lg:px-8" :class="backgroundClass">
-    <div class="mx-auto max-w-7xl">
+  <section :id="id" class="scroll-mt-24 py-14" :class="backgroundClass">
+    <div class="site-container">
       <div class="section-heading">
         <div>
           <p class="section-kicker" :class="kickerClass">{{ kicker }}</p>

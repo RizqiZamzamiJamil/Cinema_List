@@ -37,7 +37,7 @@ const emit = defineEmits(['open-detail', 'search']);
     <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,10,16,0.97),rgba(7,10,16,0.76),rgba(7,10,16,0.34))]"></div>
     <div class="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-cinema-ink to-transparent"></div>
 
-    <div class="mx-auto grid w-full max-w-7xl items-center gap-10 px-4 pb-20 pt-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8">
+    <div class="site-container grid items-center gap-10 pb-20 pt-10 xl:grid-cols-[minmax(0,1fr)_360px]">
       <div class="max-w-3xl">
         <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-cinema-mist">
           <Sparkles class="h-4 w-4 text-cinema-gold" />
@@ -82,7 +82,7 @@ const emit = defineEmits(['open-detail', 'search']);
       <button
         v-if="heroHighlight"
         type="button"
-        class="group hidden overflow-hidden rounded-2xl border border-white/15 bg-white/10 text-left shadow-[0_24px_80px_rgba(0,0,0,0.45)] transition duration-300 hover:-translate-y-2 hover:bg-white/15 lg:block"
+        class="group hidden overflow-hidden rounded-2xl border border-white/15 bg-white/10 text-left shadow-[0_24px_80px_rgba(0,0,0,0.45)] transition duration-300 hover:-translate-y-2 hover:bg-white/15 xl:block"
         @click="emit('open-detail', heroHighlight, 'movie')"
       >
         <div class="relative">

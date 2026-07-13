@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-cinema-ink px-4 py-8 text-center text-sm text-cinema-mist lg:px-8">
-    <p>
+  <footer class="bg-cinema-ink py-8 text-center text-sm text-cinema-mist">
+    <p class="site-container">
       CinemaList by Rizqi Zamzami Jamil. Data from
       <a
         class="font-bold text-cinema-teal hover:text-cinema-gold"

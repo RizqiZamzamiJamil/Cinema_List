@@ -13,6 +13,44 @@ body {
   background: #070a10;
 }
 
+.site-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+@media (min-width: 576px) {
+  .site-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .site-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .site-container {
+    max-width: 1640px;
+  }
+}
+
 @layer components {
   .brand-word-cinema {
     background: linear-gradient(180deg, #ffffff 0%, #eef3f8 44%, #9ba9bb 100%);
